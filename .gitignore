@@ -1,0 +1,14 @@
+# Compiled Files
+*.tfstate
+*.tfstate.backup
+
+# Module Directory
+.terraform/
+
+# Connection File
+connection.tf
+
+.DS_store
+
+# tfvars file  
+*.tfvars
