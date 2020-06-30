@@ -1,9 +1,4 @@
-variable "vmname_db" {
-  description = "The name of the virtual machine used to deploy the vms"
-  default     = "terraformvm"
-}
-
-variable "vmname_web" {
+variable "vmname" {
   description = "The name of the virtual machine used to deploy the vms"
   default     = "terraformvm"
 }
@@ -22,24 +17,13 @@ variable "data_disk_size_gb" {
   default     = 20
 }
 
-variable "data_disk_db" {
-  type        = "string"
+variable "data_disk" {
+  type        = string
   description = "Set to true to add a datadisk."
   default     = "false"
 }
 
-variable "data_disk_web" {
-  type        = "string"
-  description = "Set to true to add a datadisk."
-  default     = "false"
-}
-
-variable "instances_db" {
-  description = "number of instances you want deploy from the template"
-  default     = 1
-}
-
-variable "instances_web" {
+variable "instances" {
   description = "number of instances you want deploy from the template"
   default     = 1
 }
@@ -63,15 +47,9 @@ variable "ipv4submask" {
   default     = 24
 }
 
-variable "ipaddress_db" {
+variable "ipaddress" {
   description = "host(VM) IP address in list format, support more than one IP. Should correspond to number of instances"
-  type        = "list"
-  default     = [""]
-}
-
-variable "ipaddress_web" {
-  description = "host(VM) IP address in list format, support more than one IP. Should correspond to number of instances"
-  type        = "list"
+  type        = list(string)
   default     = [""]
 }
 
@@ -102,27 +80,16 @@ variable "vmgateway" {
 }
 
 variable "vmdns" {
-  type    = "list"
+  type    = list(string)
   default = []
 }
 
-
-variable "tag_category_db" {
-    description = "Used to name a tags' category on vCenter" 
-    default = ""
+variable "tag_category" {
+  description = "Used to name a tags' category on vCenter"
+  default     = ""
 }
 
-variable "tag_db" {
-    description = "Used to name a tag on vCenter"
-    default = ""
-}
-
-variable "tag_category_web" {
-    description = "Used to name a tags' category on vCenter" 
-    default = ""
-}
-
-variable "tag_web" {
-    description = "Used to name a tag on vCenter"
-    default = ""
+variable "tag" {
+  description = "Used to name a tag on vCenter"
+  default     = ""
 }
