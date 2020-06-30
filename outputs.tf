@@ -16,6 +16,4 @@ output "vm_name" {
 output "vm_ip" {
   description = "VMs IPs deployed from resource LinuxVM"
   value       = module.vmware_linux_vm.vm_ip
-
 }
-

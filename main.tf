@@ -16,5 +16,3 @@ module "vmware_linux_vm" {
   tag_category      = var.tag_category
   tag               = var.tag
 }
-
-
